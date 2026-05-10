@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表单模板生成器</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <header class="bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+          <a href="/" class="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
+            📋 表单模板生成器
+          </a>
+        </div>
+        <div class="flex space-x-4">
+          <a href="/my-forms" class="px-4 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors font-medium">
+            我的表单
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="builder-section" class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-12 gap-6">
+      <div class="col-span-3">
+        <div class="bg-white rounded-lg shadow p-4">
+          <h2 class="text-lg font-semibold mb-4 text-gray-800">组件库</h2>
+          <div class="space-y-2">
+            <div class="component-item p-3 border-2 border-dashed border-gray-300 rounded-lg cursor-move hover:border-blue-500 hover:bg-blue-50 transition-colors"
+                 draggable="true" data-type="text">
+              <div class="flex items-center">
+                <span class="text-2xl mr-2">📝</span>
+                <span class="font-medium">单行文本</span>
+              </div>
+            </div>
+            <div class="component-item p-3 border-2 border-dashed border-gray-300 rounded-lg cursor-move hover:border-blue-500 hover:bg-blue-50 transition-colors"
+                 draggable="true" data-type="textarea">
+              <div class="flex items-center">
+                <span class="text-2xl mr-2">📄</span>
+                <span class="font-medium">多行文本</span>
+              </div>
+            </div>
+            <div class="component-item p-3 border-2 border-dashed border-gray-300 rounded-lg cursor-move hover:border-blue-500 hover:bg-blue-50 transition-colors"
+                 draggable="true" data-type="number">
+              <div class="flex items-center">
+                <span class="text-2xl mr-2">🔢</span>
+                <span class="font-medium">数字输入</span>
+              </div>
+            </div>
+            <div class="component-item p-3 border-2 border-dashed border-gray-300 rounded-lg cursor-move hover:border-blue-500 hover:bg-blue-50 transition-colors"
+                 draggable="true" data-type="email">
+              <div class="flex items-center">
+                <span class="text-2xl mr-2">📧</span>
+                <span class="font-medium">邮箱地址</span>
+              </div>
+            </div>
+            <div class="component-item p-3 border-2 border-dashed border-gray-300 rounded-lg cursor-move hover:border-blue-500 hover:bg-blue-50 transition-colors"
+                 draggable="true" data-type="radio">
+              <div class="flex items-center">
+                <span class="text-2xl mr-2">🔘</span>
+                <span class="font-medium">单选框</span>
+              </div>
+            </div>
+            <div class="component-item p-3 border-2 border-dashed border-gray-300 rounded-lg cursor-move hover:border-blue-500 hover:bg-blue-50 transition-colors"
+                 draggable="true" data-type="checkbox">
+              <div class="flex items-center">
+                <span class="text-2xl mr-2">☑️</span>
+                <span class="font-medium">多选框</span>
+              </div>
+            </div>
+            <div class="component-item p-3 border-2 border-dashed border-gray-300 rounded-lg cursor-move hover:border-blue-500 hover:bg-blue-50 transition-colors"
+                 draggable="true" data-type="date">
+              <div class="flex items-center">
+                <span class="text-2xl mr-2">📅</span>
+                <span class="font-medium">日期选择</span>
+              </div>
+            </div>
+            <div class="component-item p-3 border-2 border-dashed border-gray-300 rounded-lg cursor-move hover:border-blue-500 hover:bg-blue-50 transition-colors"
+                 draggable="true" data-type="time">
+              <div class="flex items-center">
+                <span class="text-2xl mr-2">⏰</span>
+                <span class="font-medium">时间选择</span>
+              </div>
+            </div>
+            <div class="component-item p-3 border-2 border-dashed border-gray-300 rounded-lg cursor-move hover:border-blue-500 hover:bg-blue-50 transition-colors"
+                 draggable="true" data-type="select">
+              <div class="flex items-center">
+                <span class="text-2xl mr-2">📋</span>
+                <span class="font-medium">下拉选择</span>
+              </div>
+            </div>
+            <div class="component-item p-3 border-2 border-dashed border-gray-300 rounded-lg cursor-move hover:border-blue-500 hover:bg-blue-50 transition-colors"
+                 draggable="true" data-type="file">
+              <div class="flex items-center">
+                <span class="text-2xl mr-2">📁</span>
+                <span class="font-medium">文件上传</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-6">
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="mb-6">
+            <input type="text" id="form-title" placeholder="请输入表单标题" 
+                   class="w-full text-2xl font-bold border-b-2 border-gray-200 focus:border-blue-500 outline-none py-2 mb-2">
+            <textarea id="form-description" placeholder="请输入表单描述（可选）" 
+                      class="w-full border-b-2 border-gray-200 focus:border-blue-500 outline-none py-2 resize-none" rows="2"></textarea>
+          </div>
+
+          <div id="form-preview" class="min-h-96 border-2 border-dashed border-gray-300 rounded-lg p-4 bg-gray-50">
+            <div class="text-center text-gray-400 py-20" id="empty-hint">
+              <p class="text-lg">将左侧组件拖拽到此处</p>
+              <p class="text-sm mt-2">开始创建您的表单</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-3">
+        <div id="field-editor" class="bg-white rounded-lg shadow p-4 hidden">
+          <h2 class="text-lg font-semibold mb-4 text-gray-800">字段设置</h2>
+          <div id="field-editor-content"></div>
+        </div>
+        
+        <div class="mt-6 bg-white rounded-lg shadow p-4">
+          <button onclick="saveForm()" class="w-full py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium">
+            保存表单
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div id="share-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg p-6 w-full max-w-md mx-4">
+      <h3 class="text-xl font-bold mb-4 text-gray-800">表单创建成功！</h3>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700 mb-2">分享链接</label>
+        <div class="flex">
+          <input type="text" id="share-link" readonly class="flex-1 px-3 py-2 border border-gray-300 rounded-l-lg bg-gray-50 text-sm">
+          <button onclick="copyShareLink()" class="px-4 py-2 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition-colors">
+            复制
+          </button>
+        </div>
+      </div>
+      <div class="flex space-x-3">
+        <button onclick="openForm()" class="flex-1 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors">
+          预览表单
+        </button>
+        <button onclick="viewSubmissions()" class="flex-1 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+          查看数据
+        </button>
+      </div>
+      <button onclick="closeShareModal()" class="mt-4 w-full py-2 text-gray-600 hover:text-gray-800">
+        关闭
+      </button>
+    </div>
+  </div>
+
+  <script src="/js/builder.js"></script>
+</body>
+</html>
