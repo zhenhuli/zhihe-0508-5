@@ -1,0 +1,9 @@
+{
+  "pid": 9323,
+  "startedAt": 1778409377463,
+  "command": "dev",
+  "cwd": "/Users/lizhenhu/Desktop/zhihe-0508-5/study-room",
+  "port": 3000,
+  "hostname": "::1",
+  "url": "http://[::1]:3000"
+}
