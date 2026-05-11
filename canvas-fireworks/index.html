@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas 烟花特效工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="fireworks-canvas"></canvas>
+    
+    <div class="control-panel">
+        <div class="panel-header">
+            <h3>🎆 烟花控制</h3>
+            <button id="toggle-panel" class="toggle-btn">收起</button>
+        </div>
+        
+        <div class="panel-content">
+            <div class="control-group">
+                <label for="color-picker">烟花颜色</label>
+                <input type="color" id="color-picker" value="#ff4500">
+                <div class="color-presets">
+                    <div class="color-preset" data-color="#ff4500" style="background: #ff4500;"></div>
+                    <div class="color-preset" data-color="#00ff7f" style="background: #00ff7f;"></div>
+                    <div class="color-preset" data-color="#1e90ff" style="background: #1e90ff;"></div>
+                    <div class="color-preset" data-color="#ff69b4" style="background: #ff69b4;"></div>
+                    <div class="color-preset" data-color="#ffd700" style="background: #ffd700;"></div>
+                    <div class="color-preset" data-color="#random" style="background: linear-gradient(45deg, #ff4500, #00ff7f, #1e90ff, #ff69b4);">随机</div>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label for="particle-count">粒子数量: <span id="particle-count-value">80</span></label>
+                <input type="range" id="particle-count" min="20" max="200" value="80" step="10">
+            </div>
+            
+            <div class="control-group">
+                <label for="explosion-speed">绽放速度: <span id="explosion-speed-value">5</span></label>
+                <input type="range" id="explosion-speed" min="1" max="10" value="5" step="1">
+            </div>
+            
+            <div class="control-group">
+                <label for="particle-size">粒子大小: <span id="particle-size-value">3</span></label>
+                <input type="range" id="particle-size" min="1" max="8" value="3" step="0.5">
+            </div>
+            
+            <div class="control-group">
+                <label for="trail-length">尾迹长度: <span id="trail-length-value">10</span></label>
+                <input type="range" id="trail-length" min="1" max="30" value="10" step="1">
+            </div>
+            
+            <div class="control-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="fullscreen-mode"> 全屏烟花模式
+                </label>
+            </div>
+            
+            <div class="control-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="trail-effect" checked> 尾迹效果
+                </label>
+            </div>
+            
+            <div class="control-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="multicolor"> 🌈 彩色烟花
+                </label>
+            </div>
+            
+            <div class="control-group">
+                <label for="explosion-type">爆炸效果</label>
+                <select id="explosion-type" class="effect-select">
+                    <option value="circle">🎆 圆形爆炸</option>
+                    <option value="ring">💍 环形爆炸</option>
+                    <option value="star">⭐ 星形爆炸</option>
+                    <option value="heart">❤️ 心形爆炸</option>
+                    <option value="waterfall">💧 瀑布爆炸</option>
+                    <option value="spiral">🌀 螺旋爆炸</option>
+                    <option value="doubleRing">💎 双环爆炸</option>
+                    <option value="random">🎲 随机效果</option>
+                </select>
+            </div>
+            
+            <div class="button-group">
+                <button id="clear-btn">清除画布</button>
+                <button id="demo-btn">演示模式</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="hint-text">点击屏幕任意位置触发烟花绽放 🎆</div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
