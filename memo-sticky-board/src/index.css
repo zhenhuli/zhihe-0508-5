@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+}
+
+.sticky-note {
+  cursor: grab;
+  user-select: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.sticky-note:active {
+  cursor: grabbing;
+}
+
+.sticky-note:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.sticky-note.dragging {
+  opacity: 0.8;
+  z-index: 1000;
+}
