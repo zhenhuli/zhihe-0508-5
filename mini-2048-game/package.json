@@ -1,0 +1,17 @@
+{
+  "name": "mini-2048-game",
+  "version": "1.0.0",
+  "description": "2048 game built with vanilla JS, modular CSS, and Vite",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["2048", "game", "vanilla-js"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^8.0.12"
+  }
+}
