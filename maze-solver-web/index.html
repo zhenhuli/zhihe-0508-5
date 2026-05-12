@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>迷宫求解演示工具</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🧩 迷宫求解演示工具</h1>
+    </header>
+    
+    <div class="main-content">
+      <aside class="controls">
+        <div class="control-group">
+          <h3>迷宫设置</h3>
+          <div class="input-group">
+            <label>行数:</label>
+            <input type="number" id="rows" value="21" min="11" max="51" step="2">
+          </div>
+          <div class="input-group">
+            <label>列数:</label>
+            <input type="number" id="cols" value="21" min="11" max="51" step="2">
+          </div>
+          <button id="generateBtn" class="btn btn-primary">生成随机迷宫</button>
+          <button id="emptyBtn" class="btn btn-secondary">清空迷宫</button>
+        </div>
+        
+        <div class="control-group">
+          <h3>寻路算法</h3>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="algorithm" value="dfs" checked>
+              DFS (深度优先)
+            </label>
+            <label>
+              <input type="radio" name="algorithm" value="bfs">
+              BFS (广度优先)
+            </label>
+            <label>
+              <input type="radio" name="algorithm" value="dijkstra">
+              Dijkstra 算法
+            </label>
+            <label>
+              <input type="radio" name="algorithm" value="astar">
+              A* 算法
+            </label>
+            <label>
+              <input type="radio" name="algorithm" value="bidirectional">
+              双向 BFS
+            </label>
+            <label>
+              <input type="radio" name="algorithm" value="bestfirst">
+              Best-First Search
+            </label>
+          </div>
+        </div>
+        
+        <div class="control-group">
+          <h3>演示控制</h3>
+          <div class="input-group">
+            <label>速度 (ms):</label>
+            <input type="number" id="speed" value="50" min="10" max="500" step="10">
+          </div>
+          <button id="startBtn" class="btn btn-success">开始求解</button>
+          <button id="pauseBtn" class="btn btn-warning" disabled>暂停</button>
+          <button id="resetBtn" class="btn btn-danger">重置</button>
+        </div>
+        
+        <div class="control-group">
+          <h3>手动绘制</h3>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="drawMode" value="wall">
+              绘制墙壁
+            </label>
+            <label>
+              <input type="radio" name="drawMode" value="path" checked>
+              绘制路径
+            </label>
+            <label>
+              <input type="radio" name="drawMode" value="start">
+              设置起点
+            </label>
+            <label>
+              <input type="radio" name="drawMode" value="end">
+              设置终点
+            </label>
+          </div>
+        </div>
+        
+        <div class="control-group legend">
+          <h3>图例</h3>
+          <div class="legend-item">
+            <span class="legend-color start"></span>
+            <span>起点</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color end"></span>
+            <span>终点</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color wall"></span>
+            <span>墙壁</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color path"></span>
+            <span>路径</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color visited"></span>
+            <span>已访问</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color path-found"></span>
+            <span>找到路径</span>
+          </div>
+        </div>
+      </aside>
+      
+      <main class="canvas-container">
+        <canvas id="mazeCanvas"></canvas>
+        <div id="status" class="status">就绪</div>
+      </main>
+    </div>
+  </div>
+  
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
