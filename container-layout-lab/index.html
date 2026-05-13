@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>容器布局实验台 - Container Layout Lab</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container">
+            <span class="navbar-brand mb-0 h1">
+                <i class="bi bi-box"></i> 容器布局实验台
+            </span>
+            <span class="text-white-50 small">Container Layout Lab</span>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="card-title mb-0">控制面板</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="controlForm">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">宽度 (Width)</label>
+                                <div class="input-group">
+                                    <input type="range" class="form-range" id="widthRange" min="50" max="600" value="300">
+                                    <input type="number" class="form-control form-control-sm" id="widthInput" value="300" min="50" max="1000">
+                                    <span class="input-group-text">px</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">高度 (Height)</label>
+                                <div class="input-group">
+                                    <input type="range" class="form-range" id="heightRange" min="50" max="500" value="200">
+                                    <input type="number" class="form-control form-control-sm" id="heightInput" value="200" min="50" max="800">
+                                    <span class="input-group-text">px</span>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">内边距 (Padding)</label>
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <label class="form-label small text-muted">上</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="number" class="form-control" id="paddingTop" value="20" min="0" max="100">
+                                            <span class="input-group-text">px</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label small text-muted">右</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="number" class="form-control" id="paddingRight" value="20" min="0" max="100">
+                                            <span class="input-group-text">px</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label small text-muted">下</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="number" class="form-control" id="paddingBottom" value="20" min="0" max="100">
+                                            <span class="input-group-text">px</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label small text-muted">左</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="number" class="form-control" id="paddingLeft" value="20" min="0" max="100">
+                                            <span class="input-group-text">px</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-check mt-2">
+                                    <input class="form-check-input" type="checkbox" id="linkPadding" checked>
+                                    <label class="form-check-label small" for="linkPadding">
+                                        统一设置
+                                    </label>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">圆角 (Border Radius)</label>
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <label class="form-label small text-muted">左上</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="number" class="form-control" id="borderTopLeftRadius" value="12" min="0" max="100">
+                                            <span class="input-group-text">px</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label small text-muted">右上</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="number" class="form-control" id="borderTopRightRadius" value="12" min="0" max="100">
+                                            <span class="input-group-text">px</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label small text-muted">右下</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="number" class="form-control" id="borderBottomRightRadius" value="12" min="0" max="100">
+                                            <span class="input-group-text">px</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label small text-muted">左下</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="number" class="form-control" id="borderBottomLeftRadius" value="12" min="0" max="100">
+                                            <span class="input-group-text">px</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-check mt-2">
+                                    <input class="form-check-input" type="checkbox" id="linkRadius" checked>
+                                    <label class="form-check-label small" for="linkRadius">
+                                        统一设置
+                                    </label>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">溢出规则 (Overflow)</label>
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <label class="form-label small text-muted">水平</label>
+                                        <select class="form-select form-select-sm" id="overflowX">
+                                            <option value="visible">visible</option>
+                                            <option value="hidden">hidden</option>
+                                            <option value="scroll">scroll</option>
+                                            <option value="auto" selected>auto</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label small text-muted">垂直</label>
+                                        <select class="form-select form-select-sm" id="overflowY">
+                                            <option value="visible">visible</option>
+                                            <option value="hidden">hidden</option>
+                                            <option value="scroll">scroll</option>
+                                            <option value="auto" selected>auto</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">文本溢出 (Text Overflow)</label>
+                                <div class="row g-2 mb-2">
+                                    <div class="col-6">
+                                        <label class="form-label small text-muted">换行方式</label>
+                                        <select class="form-select form-select-sm" id="whiteSpace">
+                                            <option value="normal">normal</option>
+                                            <option value="nowrap">nowrap</option>
+                                            <option value="pre">pre</option>
+                                            <option value="pre-wrap">pre-wrap</option>
+                                            <option value="pre-line">pre-line</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label small text-muted">溢出样式</label>
+                                        <select class="form-select form-select-sm" id="textOverflow">
+                                            <option value="clip">clip</option>
+                                            <option value="ellipsis" selected>ellipsis</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="enableLineClamp">
+                                    <label class="form-check-label small" for="enableLineClamp">
+                                        启用多行截断
+                                    </label>
+                                </div>
+                                <div class="mt-2" id="lineClampControl" style="display: none;">
+                                    <label class="form-label small text-muted">显示行数</label>
+                                    <div class="input-group input-group-sm">
+                                        <input type="number" class="form-control" id="lineClamp" value="2" min="1" max="10">
+                                        <span class="input-group-text">行</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">边框 (Border)</label>
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <label class="form-label small text-muted">宽度</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="number" class="form-control" id="borderWidth" value="2" min="0" max="20">
+                                            <span class="input-group-text">px</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label small text-muted">颜色</label>
+                                        <input type="color" class="form-control form-control-color" id="borderColor" value="#0d6efd">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">背景色</label>
+                                <div class="input-group input-group-sm">
+                                    <input type="color" class="form-control form-control-color" id="backgroundColor" value="#ffffff">
+                                    <input type="text" class="form-control" id="backgroundColorText" value="#ffffff">
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <button type="button" class="btn btn-outline-primary btn-sm w-100 mb-2" id="resetBtn">
+                                重置为默认值
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-3">
+                    <div class="card-header bg-white">
+                        <h6 class="card-title mb-0">CSS 代码</h6>
+                    </div>
+                    <div class="card-body">
+                        <pre class="mb-0 small bg-light p-3 rounded" id="cssCode"></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">预览区域</h5>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="showGrid" checked>
+                            <label class="form-check-label small" for="showGrid">显示参考线</label>
+                        </div>
+                    </div>
+                    <div class="card-body d-flex align-items-center justify-content-center" style="min-height: 600px; background: repeating-linear-gradient(45deg, #f8f9fa, #f8f9fa 10px, #e9ecef 10px, #e9ecef 20px);">
+                        <div id="previewContainer" class="preview-wrapper">
+                            <div id="previewBox" class="preview-box">
+                                <div class="preview-content">
+                                    <h6>容器内容示例</h6>
+                                    <p class="mb-1">这是一段测试文本，用于展示容器内的内容布局效果。</p>
+                                    <p class="mb-1">调整左侧参数可以实时查看容器样式变化。</p>
+                                    <p class="mb-1">Padding 控制内容与边框的距离。</p>
+                                    <p class="mb-1">Border Radius 控制圆角大小。</p>
+                                    <p class="mb-1">Overflow 控制内容溢出时的处理方式。</p>
+                                    <p>尝试添加更多内容来测试滚动效果...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+.preview-wrapper {
+    position: relative;
+}
+
+.preview-box {
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.preview-box.with-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background-image: 
+        linear-gradient(rgba(13, 110, 253, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13, 110, 253, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: 1;
+}
+
+.preview-content {
+    position: relative;
+    z-index: 2;
+}
+
+.preview-content h6 {
+    color: #0d6efd;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.preview-content p {
+    font-size: 0.875rem;
+    color: #495057;
+    line-height: 1.6;
+}
+
+.form-control-color {
+    width: 100%;
+    padding: 0.25rem;
+}
+
+.form-range {
+    flex: 1;
+}
+
+#cssCode {
+    font-family: 'SFMono-Regular', Consolas, monospace;
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.card {
+    border: none;
+}
+
+.card-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+input[type="color"] {
+    cursor: pointer;
+    height: 31px;
+}
