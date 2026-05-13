@@ -1,0 +1,23 @@
+{
+  "name": "retro-snake-game",
+  "version": "1.0.0",
+  "description": "复古风格贪吃蛇网页游戏",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp build",
+    "start": "gulp serve"
+  },
+  "keywords": ["snake", "game", "retro", "gulp", "javascript"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^5.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-rename": "^2.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2"
+  }
+}

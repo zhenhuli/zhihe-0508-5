@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>复古贪吃蛇 | Retro Snake Game</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="game-container">
+    <header class="game-header">
+      <h1 class="game-title">贪吃蛇</h1>
+      <p class="game-subtitle">RETRO SNAKE GAME</p>
+    </header>
+
+    <div class="score-panel">
+      <div class="score-item">
+        <span class="score-label">得分</span>
+        <span class="score-value" id="currentScore">0</span>
+      </div>
+      <div class="score-item">
+        <span class="score-label">最高分</span>
+        <span class="score-value" id="highScore">0</span>
+      </div>
+    </div>
+
+    <div class="game-board-wrapper">
+      <canvas id="gameCanvas" width="400" height="400"></canvas>
+      <div class="game-overlay" id="gameOverlay">
+        <div class="overlay-content">
+          <h2 id="overlayTitle">按开始键</h2>
+          <p id="overlayMessage">PRESS START TO PLAY</p>
+          <button class="btn-start" id="startBtn">开始游戏</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="control-panel">
+      <div class="control-section">
+        <h3 class="section-title">难度</h3>
+        <div class="difficulty-selector">
+          <button class="difficulty-btn active" data-speed="150">简单</button>
+          <button class="difficulty-btn" data-speed="100">普通</button>
+          <button class="difficulty-btn" data-speed="70">困难</button>
+          <button class="difficulty-btn" data-speed="50">专家</button>
+        </div>
+      </div>
+
+      <div class="control-section">
+        <h3 class="section-title">皮肤</h3>
+        <div class="skin-selector">
+          <button class="skin-btn active" data-skin="classic" style="--snake-color: #00ff00; --food-color: #ff0000"></button>
+          <button class="skin-btn" data-skin="neon" style="--snake-color: #00ffff; --food-color: #ff00ff"></button>
+          <button class="skin-btn" data-skin="gold" style="--snake-color: #ffd700; --food-color: #ff6347"></button>
+          <button class="skin-btn" data-skin="retro" style="--snake-color: #8b4513; --food-color: #dc143c"></button>
+          <button class="skin-btn" data-skin="candy" style="--snake-color: #ff69b4; --food-color: #9370db"></button>
+        </div>
+      </div>
+
+      <div class="control-section">
+        <h3 class="section-title">操作</h3>
+        <div class="controls-info">
+          <div class="control-key">↑</div>
+          <div class="control-row">
+            <div class="control-key">←</div>
+            <div class="control-key">↓</div>
+            <div class="control-key">→</div>
+          </div>
+          <p class="control-hint">使用方向键控制蛇的移动</p>
+          <p class="control-hint">按空格键暂停/继续</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-info">
+      <span id="gameStatus">准备就绪</span>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
