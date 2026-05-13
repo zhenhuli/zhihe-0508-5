@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>餐厅电子菜单</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="page menu-page" id="menuPage">
+            <header class="header">
+                <h1>🍽️ 美味餐厅</h1>
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+            </header>
+
+            <div class="menu-container">
+                <nav class="category-sidebar" id="categorySidebar"></nav>
+                <main class="menu-content" id="menuContent"></main>
+            </div>
+        </div>
+
+        <div class="page detail-page" id="detailPage">
+            <header class="detail-header">
+                <button class="back-btn" id="backBtn">←</button>
+                <span class="detail-title">菜品详情</span>
+            </header>
+            <div class="detail-content" id="detailContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
