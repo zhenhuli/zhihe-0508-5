@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D星座漫游</title>
+  <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+  <div id="canvas-container"></div>
+  
+  <div class="ui-overlay">
+    <h1 class="title">3D星座漫游</h1>
+    <div class="controls-hint">
+      <p>🖱️ 拖拽鼠标旋转视角</p>
+      <p>🔍 滚轮缩放</p>
+    </div>
+    <div class="constellation-info">
+      <h2 id="constellation-name">北斗七星</h2>
+      <p id="constellation-desc">大熊座的一部分，由七颗明亮的恒星组成</p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+</html>
